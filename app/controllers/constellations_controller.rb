@@ -1,5 +1,9 @@
 class ConstellationsController < ApplicationController
   def index
-    @cons = Constellation.all
+    @constellations = Constellation.all
+  end
+
+  def show
+    @constellation = Constellation.find(params[:id])
   end
 end
