@@ -7,4 +7,5 @@ Rails.application.routes.draw do
   get '/constellations/:id', to: "constellations#show"
   
   get '/stars', to: "stars#index"
+  get '/stars/:id', to: "stars#show"
 end

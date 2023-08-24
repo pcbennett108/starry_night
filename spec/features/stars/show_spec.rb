@@ -55,13 +55,24 @@ RSpec.describe "stars index page", type: :feature do
   describe "When I visit '/stars/:id'" do
     describe "I see the star with that id" do
       it "displays all star attributes" do
-        visit "/stars/#{@@star_1.id}"
+        visit "/stars/#{@star_1.id}"
         #save_and_open_page
         expect(page).to have_content(@star_1.name)
         expect(page).to have_content(@star_1.distance)
         expect(page).to have_content(@star_1.mass)
         expect(page).to have_content(@star_1.radius)
         expect(page).to have_content(@star_1.visible)
+        expect(page).to have_content(@star_1.constellation.name)
+      end
+      it "displays all star attributes of a different star" do
+        visit "/stars/#{@star_3.id}"
+
+        expect(page).to have_content(@star_3.name)
+        expect(page).to have_content(@star_3.distance)
+        expect(page).to have_content(@star_3.mass)
+        expect(page).to have_content(@star_3.radius)
+        expect(page).to have_content(@star_3.visible)
+        expect(page).to have_content(@star_3.constellation.name)
       end
     end
   end
