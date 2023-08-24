@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   # root "articles#index"
   get '/constellations', to: "constellations#index"
   get '/constellations/:id', to: "constellations#show"
+  
+  get '/stars', to: "stars#index"
 end

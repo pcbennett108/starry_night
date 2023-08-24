@@ -1,0 +1,10 @@
+<h2>All Stars</h2>
+<hr>
+<% @stars.each do |star| %>
+  <h3><%= star.name %> in the constellation of <%= star.constellation.name %></h3>
+  <p>Distance from Earth in Light Years: <%= star.distance %></p>
+  <p>Mass in units of Solar Mass: <%= star.mass %></p>
+  <p>Radius in units of Solar Radius: <%= star.radius %></p>
+  <p><%= star.name %> is visible to the naked eye: <%= star.visible %></p>
+  <hr>
+<% end %>
