@@ -72,7 +72,7 @@ RSpec.describe "constellation stars index page", type: :feature do
       end
       it "only displays stars belonging to that constellation's id" do
         visit "/constellations/#{@lynx.id}/stars"
-        
+
         expect(page).to_not have_content(@star_3.name)
         expect(page).to_not have_content(@star_4.name)
 
@@ -80,8 +80,3 @@ RSpec.describe "constellation stars index page", type: :feature do
     end
   end
 end
-
-#? ID short vs long name
-#? naming convention for child index of specific parent
-#? CSS scoping at this level?
-#? the 'majic' on line 4 of controller
