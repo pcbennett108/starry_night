@@ -22,20 +22,18 @@ RSpec.describe "constellations index page", type: :feature do
         stars_with_planets: 13,
         in_zodiac: true
       )
-
   end
-end
-
-describe "When I visit '/constellations'" do
-  describe "I see the name of each constellation in the system" do
+  
+  describe "When I visit '/constellations'" do
+    describe "I see the name of each constellation in the system" do
       it "displays all constellations" do
-
+        
         visit '/constellations'
-
-        expect(page).to have_content(@cons_1.title)
-        expect(page).to have_content(@cons_2.title)
+        #save_and_open_page
+        expect(page).to have_content(@cons_1.name)
+        expect(page).to have_content(@cons_2.name)
       end
-
-
+      
+    end
   end
 end
