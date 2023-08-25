@@ -1,6 +1,7 @@
 <h2>The Constellation of <%= @constellation.name %></h2>
+<p>There are <%= @constellation.stars.count %> stars in <%= @constellation.name %>.</p>
 <p><%= @constellation.name %> symbolizes <%= @constellation.symbolism %>.</p>
 <p>It has <%= @constellation.bayer_stars %> Bayer stars.</p>
 <p><%= @constellation.stars_with_planets %> of its stars have planets.</p>
 <p>It is a member of the zodiac: <%= @constellation.in_zodiac %></p>
-<%# change line 5 to be more readable %>
+<%# change boolean to be more readable %>
