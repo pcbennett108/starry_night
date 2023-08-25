@@ -1,0 +1,6 @@
+Id,name,symbolism,bayer_stars,stars_with_planets,in_zodiac
+1,Aquarius,The Water-Bearer,97,12,TRUE
+2,Sagittarius,The Archer,68,32,TRUE
+3,Lynx,The faint Tiger,42,6,FALSE
+4,Pegasus,The Winged Horse,88,12,FALSE
+5,Pisces,The Fishes,86,13,TRUE
