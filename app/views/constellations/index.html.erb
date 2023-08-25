@@ -1,4 +1,5 @@
 <h2>All Constellations</h2>
 <% @constellations.each do |cons| %>
-  <p><%= cons.name %></p>
+  <h4 class="constellation"><%= cons.name %>  </h4>
+  <p>Posted on: <%= cons.created_at %></p>
 <% end %>
