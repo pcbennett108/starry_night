@@ -1,6 +1,6 @@
 class ConstellationsController < ApplicationController
   def index
-    @constellations = Constellation.order(:created_at)
+    @constellations = Constellation.order(created_at: :DESC)
   end
 
   def show
