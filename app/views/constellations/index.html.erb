@@ -1,5 +1,23 @@
 <h2>All Constellations</h2>
-<% @constellations.each do |cons| %>
-  <h4 class="constellation"><%= cons.name %>  </h4>
-  <p>Posted on: <%= cons.created_at %></p>
-<% end %>
+
+<table class="table table-striped table-bordered">
+  <thead class="table-dark">
+    <tr>
+      <th>Name</th>
+      <th>Posted On</th>
+      <th> </th>
+    </tr>
+  </thead>
+
+  <tbody class="table-group-divider">
+    <% @constellations.each do |cons| %>
+      <tr>
+      <td class="constellation">
+        <%= link_to "#{cons.name}", "/constellations/#{cons.id}", class:"link-underline link-underline-opacity-0 link-underline-opacity-100-hover" %>
+      </td>
+      <td><%= cons.created_at %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+

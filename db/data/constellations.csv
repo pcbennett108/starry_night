@@ -4,3 +4,4 @@ Id,name,symbolism,bayer_stars,stars_with_planets,in_zodiac
 3,Lynx,The faint Tiger,42,6,FALSE
 4,Pegasus,The Winged Horse,88,12,FALSE
 5,Pisces,The Fishes,86,13,TRUE
+6,Corvus,The Crow,10,3,FALSE
