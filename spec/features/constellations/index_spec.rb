@@ -70,7 +70,35 @@ RSpec.describe "constellations index page", type: :feature do
       end
     end
 
-
+    describe "When I visit any page on the site" do
+      # -----   User Story 8, Child Index Link
+      # As a visitor
+      # When I visit any page on the site
+      # Then I see a link at the top of the page that takes me to the Child Index
+      it "has a link at the top for the stars index page" do
+        visit "/constellations"
+  
+        within("#navbar") do
+          expect(page).to have_content("All Stars")
+          click_on "All Stars"
+          expect(current_path).to eq("/stars")
+        end
+      end
+  
+      # ------   User Story 9, Parent Index Link
+      # As a visitor
+      # When I visit any page on the site
+      # Then I see a link at the top of the page that takes me to the Parent Index
+      it "has a link at the top for the constellations index page" do
+        visit "/constellations"
+  
+        within("#navbar") do
+          expect(page).to have_content("All Constellations")
+          click_on "All Constellations"
+          expect(current_path).to eq("/constellations")
+        end
+      end
+    end
 
   end
 end
