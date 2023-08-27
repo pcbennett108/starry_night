@@ -1,5 +1,5 @@
 <div class="card" style="width: 36rem;">
-  <%= image_tag("#{@constellation.name}.jpg", :alt => "constellation graphic") %>
+  <%= image_tag "#{@constellation.name}.jpg" rescue image_tag 'empty_space.jpeg' %>
   <div class="card-body bg-light">
     <h3 class="card-title text-center p-2">
       The Constellation of <%= @constellation.name %>
@@ -16,3 +16,4 @@
 </div>
 
 <%# change boolean to be more readable %>
+
