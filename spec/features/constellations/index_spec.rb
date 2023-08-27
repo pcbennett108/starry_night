@@ -56,9 +56,10 @@ RSpec.describe "constellations index page", type: :feature do
       it "shows creation date for each constellation record" do
         visit '/constellations'
         
-        expect(page).to have_content("Posted on: #{@cons_1.created_at}")
-        expect(page).to have_content("Posted on: #{@cons_2.created_at}")
-        expect(page).to have_content("Posted on: #{@cons_3.created_at}")
+        expect(page).to have_content("Posted On")
+        expect(page).to have_content("#{@cons_1.created_at}")
+        expect(page).to have_content("#{@cons_2.created_at}")
+        expect(page).to have_content("#{@cons_3.created_at}")
       end
       
       it "lists constellations in order, newest first" do
