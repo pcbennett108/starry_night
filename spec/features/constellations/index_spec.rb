@@ -101,5 +101,25 @@ RSpec.describe "constellations index page", type: :feature do
       end
     end
 
+      # ------- User Story 17, Parent Update From Parent Index Page 
+      # As a visitor
+      # When I visit the parent index page
+      # Next to every parent, I see a link to edit that parent's info
+      # When I click the link
+      # I should be taken to that parent's edit page where I can update its information just like in User Story 12
+      describe "I see an edit constellation link for every constellation" do
+        it "has a link by each farm to edit that farm" do
+          visit "/constellations"
+
+          expect(page).to have_content("Edit Info For Scarlet Orchards")
+          expect(page).to have_content("Edit Info For Golden Orchards")
+          expect(page).to have_content("Edit Info For Lilac Vineyard")
+          expect(page).to have_content("Edit Info For Valerie's Veggies")
+
+          click_link("Edit Info For Scarlet Orchards")
+          expect(current_path).to eq("/farms/#{@scarlet.id}/edit")
+        end
+      end
+
   end
 end
