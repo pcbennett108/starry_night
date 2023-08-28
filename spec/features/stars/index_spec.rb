@@ -105,4 +105,18 @@ RSpec.describe "stars index page", type: :feature do
     end
   end
 
+    # ------   User Story 15, Child Index only shows `true` Records 
+    # As a visitor
+    # When I visit the child index
+    # Then I only see records where the boolean column is `true`
+  describe "When I visit the stars index" do
+    it "only shows records of visible stars" do
+      visit "/stars"
+      click_on "Visible to Naked Eye"
+      expect(page).to have_content("38 Lyncis")
+      expect(page).to have_content("Eta Piscium")
+      expect(page).to_not have_content("XO-5")
+      expect(page).to_not have_content("WASP-76")
+    end
+  end
 end
