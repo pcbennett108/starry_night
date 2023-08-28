@@ -1,6 +1,10 @@
 class StarsController < ApplicationController
   def index
-    @stars = Star.all
+    if params[:visible]
+      @stars = Star.where(:visible => params[:visible])
+    else
+      @stars = Star.all
+    end
   end
 
   def show
