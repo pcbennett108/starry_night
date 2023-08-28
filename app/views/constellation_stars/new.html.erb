@@ -1,0 +1,30 @@
+<h2 class="mb-4">Add A Star To <%= @constellation.name %></h2>
+<%= form_with url: "/constellations/#{@constellation.id}/stars", method: :post, local: true do |form| %>
+  <div class="container">
+    <form>
+        <div class="col-md-4 mb-3">
+          <%= form.text_field :name, class:"form-control", placeholder:"Name of Star" %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <%= form.number_field :distance, class:"form-control", placeholder:"Distance from Earth in Light Years" %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <%= form.number_field :mass, step: :any, class:"form-control", placeholder:"Mass in units of Solar mass" %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <%= form.number_field :radius, step: :any, class:"form-control", placeholder:"Radius in units of Solar Radius" %>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <%= form.label "Is this star visible to the naked eye?", class:"form-label pe-2"  %>
+          <%= form.select :visible, [["Yes", "true"], ["No", "false"]] %>
+        </div>
+      <div class="actions">
+        <%= form.submit class:'btn btn-secondary' %>
+      </div>
+    </form>
+  </div>
+<% end %>

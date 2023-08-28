@@ -16,7 +16,7 @@
   <tbody class="table-group-divider">
     <% @stars.each do |star| %>
       <tr>
-      <td><%= star.name %></td>
+      <td><%= link_to "#{star.name}", "/stars/#{star.id}", class:"link-underline link-underline-opacity-0 link-underline-opacity-100-hover" %></td>
       <td><%= star.constellation.name %></td>
       <td><%= star.distance %></td>
       <td><%= star.mass %></td>

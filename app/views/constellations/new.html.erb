@@ -1,0 +1,30 @@
+<h2 class="mb-4">Add New Constellation</h2>
+<%= form_with url: "/constellations", method: :post, local: true do |form| %>
+  <div class="container">
+    <form>
+        <div class="col-md-4 mb-3">
+          <%= form.text_field :name, class:"form-control", id:"name", placeholder:"Constellation Name" %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <%= form.text_field :symbolism, class:"form-control", id:"symbolism", placeholder:"What does this constellation symbolize?" %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <%= form.number_field :bayer_stars, class:"form-control", id:"bayer_stars", placeholder:"Number of Bayer stars" %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+          <%= form.number_field :stars_with_planets, class:"form-control", id:"stars_with_planets", placeholder:"Number of stars winth planets" %>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <%= form.label "Is this constellation in the Zodiac?", class:"form-label pe-2"  %>
+          <%= form.select :in_zodiac, [["Yes", "true"], ["No", "false"]] %>
+        </div>
+      <div class="actions">
+        <%= form.submit class:'btn btn-secondary' %>
+      </div>
+    </form>
+  </div>
+<% end %>

@@ -1,0 +1,34 @@
+<h2 class="mb-4">Update Constellation</h2>
+<%= form_with url: "/constellations/#{@constellation.id}", method: :patch, local: true do |form| %>
+  <div class="container">
+    <form>
+        <div class="col-md-4 mb-3">
+          <%= form.label :name, class:"form-label" %>
+          <%= form.text_field :name, class:"form-control", :value => @constellation.name %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+        <%= form.label :symbolism, class:"form-label" %>
+          <%= form.text_field :symbolism, class:"form-control", :value => @constellation.symbolism %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+        <%= form.label :bayer_stars, class:"form-label" %>
+          <%= form.number_field :bayer_stars, class:"form-control", :value => @constellation.bayer_stars %>
+        </div>
+
+        <div class="col-md-4 mb-3">
+        <%= form.label :stars_with_planets, class:"form-label" %>
+          <%= form.number_field :stars_with_planets, class:"form-control", :value => @constellation.stars_with_planets %>
+        </div>
+
+        <div class="col-md-6 mb-3">
+          <%= form.label "Is this constellation in the Zodiac?", class:"form-label pe-2"  %>
+          <%= form.select :in_zodiac, [["No", "false"], ["Yes", "true"]] %>
+        </div>
+      <div class="actions">
+        <%= form.submit class:'btn btn-secondary' %>
+      </div>
+    </form>
+  </div>
+<% end %>

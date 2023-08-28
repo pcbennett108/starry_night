@@ -1,18 +1,20 @@
 <div class="card" style="width: 36rem;">
-  <%= image_tag("#{@constellation.name}.jpg", :alt => "constellation graphic") %>
+  <%= image_tag "#{@constellation.name}.jpg" rescue image_tag 'empty_space.jpeg' %>
   <div class="card-body bg-light">
     <h3 class="card-title text-center p-2">
       The Constellation of <%= @constellation.name %>
     </h3>
     <p>
-      There are <%= @constellation.stars.count %> stars in <%= @constellation.name %>.
+      There are <%= @constellation.stars.count %> stars currently in the <%= @constellation.name %> database.
     </p>
     <p><%= @constellation.name %> symbolizes <%= @constellation.symbolism %>.</p>
     <p>It has <%= @constellation.bayer_stars %> Bayer stars.</p>
     <p><%= @constellation.stars_with_planets %> of its stars have planets.</p>
     <p>It is a member of the zodiac: <%= @constellation.in_zodiac %></p>
     <%= link_to "Stars in #{@constellation.name}", "/constellations/#{@constellation.id}/stars", class:"btn btn-primary" %>
+    <%= link_to "Edit", "/constellations/#{@constellation.id}/edit", class:"btn btn-secondary" %>
   </div>
 </div>
 
 <%# change boolean to be more readable %>
+
