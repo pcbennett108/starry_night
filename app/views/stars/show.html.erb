@@ -6,5 +6,6 @@
     <p>Radius: <%= @star.radius %> Times Solar Radius</p>
     <p>Is visible to the naked eye: <%= @star.visible %></p>
     <p>Belongs to the constellation of <%= @star.constellation.name %></p>
+    <%= link_to "Edit", "/stars/#{@star.id}/edit", class:"btn btn-secondary" %>
   </div>
 </div>

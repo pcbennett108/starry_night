@@ -66,10 +66,10 @@ RSpec.describe "constellations show page", type: :feature do
     describe "I see a count of this constellation's stars" do
       it "displays the star count for each constellation" do
         visit "/constellations/#{@lynx.id}"
-        expect(page).to have_content("There are 2 stars in Lynx.")
+        expect(page).to have_content("There are 2 stars currently in the Lynx database.")
         
         visit "/constellations/#{@pisces.id}"
-        expect(page).to have_content("There are 1 stars in Pisces.")
+        expect(page).to have_content("There are 1 stars currently in the Pisces database.")
       end
     end
 
