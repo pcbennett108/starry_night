@@ -7,5 +7,6 @@
     <p>Is visible to the naked eye: <%= @star.visible %></p>
     <p>Belongs to the constellation of <%= @star.constellation.name %></p>
     <%= link_to "Edit", "/stars/#{@star.id}/edit", class:"btn btn-secondary" %>
+    <%= link_to "Delete", "/stars/#{@star.id}", class:"btn btn-outline-danger ms-5", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   </div>
 </div>

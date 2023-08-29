@@ -36,6 +36,14 @@ class ConstellationsController < ApplicationController
     end
   end
 
+  def destroy
+    constellation = Constellation.find(params[:id])
+    stars = constellation.stars
+    stars.destroy_all
+    constellation.destroy
+    redirect_to "/constellations"
+  end
+
   private
   def constellation_params
     params.permit(:id, :name, :symbolism, :bayer_stars, :stars_with_planets, :in_zodiac)

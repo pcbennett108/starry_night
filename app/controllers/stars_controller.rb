@@ -25,6 +25,13 @@ class StarsController < ApplicationController
     end
   end
 
+  def destroy
+    star = Star.find(params[:id])
+    star.delete
+
+    redirect_to "/stars"
+  end
+
   private
 
   def star_params
