@@ -16,10 +16,11 @@
         <%= link_to "#{cons.name}", "/constellations/#{cons.id}", class:"link-underline link-underline-opacity-0 link-underline-opacity-100-hover" %>
       </td>
       <td><%= cons.created_at %></td>
+      <td><%= link_to "Edit", "/constellations/#{cons.id}/edit", class:"btn btn-sm btn-secondary" %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<%= link_to "New Constellation", "/constellations/new", class:"btn btn-secondary" %>
+<%= link_to "New Constellation", "/constellations/new", class:"btn btn-primary" %>
 
