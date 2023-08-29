@@ -1,8 +1,11 @@
 class ConstellationStarsController < ApplicationController
   def index
     @constellation = Constellation.find(params[:const_id])
+
     if params.keys.include?("sort")
       @stars = @constellation.stars.order(params[:sort])
+    elsif !params[:number].nil?
+      @stars = @constellation.distance_greater_than(params[:number])
     else
       @stars = @constellation.stars
     end
