@@ -3,13 +3,14 @@ Rails.application.routes.draw do
 
   # Defines the root path route ("/")
   # root "articles#index"
-  root "constellations#home"
+  root "welcome#index"
   get '/constellations', to: "constellations#index"
   get '/constellations/new', to: "constellations#new"
   get '/constellations/:id', to: "constellations#show"
   post '/constellations', to: "constellations#create"
   get '/constellations/:id/edit', to: "constellations#edit"
   patch '/constellations/:id', to: "constellations#update"
+  delete '/constellations/:id', to: "constellations#destroy"
   
   get '/constellations/:const_id/stars', to: "constellation_stars#index"
   get '/constellations/:const_id/stars/new', to: "constellation_stars#new"
@@ -19,4 +20,5 @@ Rails.application.routes.draw do
   get '/stars/:id', to: "stars#show"
   get '/stars/:id/edit', to: "stars#edit"
   patch '/stars/:id', to: "stars#update"
+  delete '/stars/:id', to: "stars#destroy"
 end

@@ -23,6 +23,7 @@
       <td><%= star.radius %></td>
       <td><%= star.visible %></td>
       <td><%= link_to "Edit", "/stars/#{star.id}/edit", class:"btn btn-sm btn-secondary" %></td>
+      <td><%= link_to "Delete", "/stars/#{star.id}", class:"btn btn-sm btn-outline-danger", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

@@ -12,9 +12,11 @@
     <p><%= @constellation.stars_with_planets %> of its stars have planets.</p>
     <p>It is a member of the zodiac: <%= @constellation.in_zodiac %></p>
     <%= link_to "View Stars in #{@constellation.name}", "/constellations/#{@constellation.id}/stars", class:"btn btn-primary" %>
-    <%= link_to "Edit", "/constellations/#{@constellation.id}/edit", class:"btn btn-secondary" %>
+    <%= link_to "Edit", "/constellations/#{@constellation.id}/edit", class:"btn btn-secondary ms-1" %>
+    <%= link_to "Delete", "/constellations/#{@constellation.id}", class:"btn btn-outline-danger ms-5", data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' } %>
   </div>
 </div>
 
 <%# change boolean to be more readable %>
+<%#  could not get COUNT to work in model. Private method error  %>
 
