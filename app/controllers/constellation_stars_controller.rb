@@ -21,6 +21,6 @@ class ConstellationStarsController < ApplicationController
   private
 
   def star_params
-    params.permit(:name, :distance, :mass, :radius, :visible)
+    params.permit(:name, :distance, :mass, :radius, :visible, :id)
   end
 end
