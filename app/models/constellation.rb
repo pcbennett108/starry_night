@@ -3,7 +3,7 @@ class Constellation < ApplicationRecord
 end
 
 def distance_greater_than(amount)
-  self.stars.where("distance > #{amount.to_i}")
+  stars.where("distance > #{amount.to_i}")
 end
 
 # error Private method - no method found
