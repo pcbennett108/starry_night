@@ -37,8 +37,4 @@
 </table>
 <%= link_to "Add Star to #{@constellation.name}", "/constellations/#{@constellation.id}/stars/new", class:"btn btn-primary mb-5" %>
 
-<%= form_with id: "filter_distance", url: "/constellations/#{@constellation.id}/stars?number", method: :get, local: true do |form| %>
-  <%= form.label :number, "Show stars with a distance higher than:" %>
-  <%= form.number_field :number %>
-  <%= form.submit "Filter Stars" %>
-<% end %>
+

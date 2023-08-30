@@ -117,4 +117,39 @@ RSpec.describe "constellations show page", type: :feature do
       end
     end
   end
+
+# ---------  User Story 19, Parent Delete 
+# As a visitor
+# When I visit a parent show page
+# Then I see a link to delete the parent
+# When I click the link "Delete Parent"
+# Then a 'DELETE' request is sent to '/parents/:id',
+# the parent is deleted, and all child records are deleted
+# and I am redirected to the parent index page where I no longer see this parent
+  describe "When I visit a constellation show page, I see a link to delete the constellation and all of it's stars." do
+    it "has a link to delete the constellation" do
+      visit "/constellations/#{@lynx.id}"
+
+      expect(@lynx).to be_a(constellation)
+      expect(page).to have_content("Delete")
+      click_link("Delete")
+
+      expect(current_path).to eq("/constellations")
+      expect(page).to_not have_content("Lynx")
+    end
+
+    it "deletes all associated products when a farm is deleted" do
+      visit "/stars"
+      expect(page).to have_content("38 Lyncis")
+      expect(page).to have_content("XO-5")
+      
+      visit "/constellations/#{@lynx.id}"
+      click_link("Delete")
+
+      visit "/stars"
+
+      expect(page).to_not have_content("38 Lyncis")
+      expect(page).to_not have_content("XO-5")
+    end
+  end
 end
