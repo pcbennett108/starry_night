@@ -130,7 +130,7 @@ RSpec.describe "constellations show page", type: :feature do
     it "has a link to delete the constellation" do
       visit "/constellations/#{@lynx.id}"
 
-      expect(@lynx).to be_a(constellation)
+      expect(@lynx).to be_a(Constellation)
       expect(page).to have_content("Delete")
       click_link("Delete")
 
